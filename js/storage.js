@@ -1,5 +1,5 @@
 const key = 'codequest-progress-v3';
-const defaults = { xp: 0, streak: 0, completed: [], lessonDone: false, dark: false, onboarded: false, username: '', learningLanguage: '', avatar: '✨', lastVisit: '', debugSolvedCases: [], challengesSolved: [], sound: true, dailyClaimedDate: '' };
+const defaults = { xp: 0, streak: 0, completed: [], lessonDone: false, themeMode: 'system', onboarded: false, username: '', learningLanguage: '', avatar: '✨', lastVisit: '', debugSolvedCases: [], challengesSolved: [], sound: true, dailyClaimedDate: '' };
 export function getState() { return { ...defaults, ...JSON.parse(localStorage.getItem(key) || '{}') }; }
 export function saveState(next) { localStorage.setItem(key, JSON.stringify(next)); return next; }
 export function updateState(patch) { return saveState({ ...getState(), ...patch }); }
